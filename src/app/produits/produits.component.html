@@ -1,0 +1,32 @@
+<div class="container">
+
+    <table class="text-center table shadow-lg mt-4">
+        <thead class="thead-dark">
+            <tr>
+                <th>ID</th>
+                <th>Designation</th>
+                <th>Prix</th>
+                <th>Quantite</th>
+                <th>Opération</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let produit of produits ">
+                <td>{{produit.id}}</td>
+                <td>{{produit.designation}}</td>
+                <td>{{produit.prix|number:'0.2'}}</td>
+                <td>{{produit.quantite}}</td>
+                <td><button class="btn btn-danger" (click)="deleteProduit(produit.id)">Delete</button>
+                    <button class="btn btn-warning ml-2" (click)="voirProduit(produit.id)">Détails Produit</button>
+                    <button class="btn btn-success ml-2" (click)="updateProduit(produit.id)">Editer</button></td>
+            </tr>
+        </tbody>
+
+    </table>
+    <button class="btn btn-danger" style="width: 300px;" (click)="saveProduit()">Ajouter Formation</button>
+    <ul class="nav nav-pills">
+        <li *ngFor="let p of pages">
+            <a>{{p}}</a></li>
+    </ul>
+</div>
